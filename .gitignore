@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+
+dist
+
+
+
+/main-ui/node_modules
+/main-ui/dist
+
+
+/child-ui/node_modules
+/child-ui/dist
