@@ -16,6 +16,7 @@ const microApps = [
 const activeApps = {}
 // 挂载app的方法
 const mountMicroApp = (path, router, store) => {
+  console.log(path,'path')
   const app = microApps.find((item) => path.startsWith(item.activeRule))
   if (app) {
     app.props = {

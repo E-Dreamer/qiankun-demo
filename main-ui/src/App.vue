@@ -1,9 +1,14 @@
 <template>
   <div id="app">
-    <router-view />
+    <BasicLayout />
   </div>
 </template>
-
+<script>
+import BasicLayout from '@/components/Layout.vue'
+export default {
+  components:{BasicLayout}
+}
+</script>
 <style>
 body,html {
   width: 100%;
