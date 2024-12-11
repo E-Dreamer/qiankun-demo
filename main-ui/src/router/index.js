@@ -23,15 +23,15 @@ const routes = [
     component:UserLayout
   },
   {
+    path:'/404',
+    name:'404',
+    component:()=>import('@/views/404'),
+  },
+  {
     path:"*",
     redirect:'/404',
     hidden:true
   },
-  {
-    path:'/404',
-    name:'404',
-    component:()=>import('@/views/404'),
-  }
 ]
 
 const router = new VueRouter({
