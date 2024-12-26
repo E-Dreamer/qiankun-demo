@@ -4,6 +4,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 Vue.config.productionTip = false
 import { routes } from '@/router'
+
 const {name } = require('/package.json')
 console.log(name,'name0------')
 // import {store} from '@/store'

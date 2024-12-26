@@ -1,7 +1,7 @@
 <!--
  * @Author: E-Dreamer
  * @Date: 2024-12-09 15:34:14
- * @LastEditTime: 2024-12-10 17:23:13
+ * @LastEditTime: 2024-12-12 10:26:58
  * @LastEditors: E-Dreamer
  * @Description: 
 -->
@@ -38,6 +38,11 @@ import {microApps} from '@/microApp'
     methods:{
       pathClick(item){
         // history.pushState(null, item.label, item.path)
+        if(item.label == 'about'){
+          this.$router.push({path:item.path,query:{name:'张三',age:18}})
+          console.log('进来？？？？',)
+          return;
+        }
         this.$router.push({path:item.path})
         // console.log(this.$route.path,'$route.path')
       },

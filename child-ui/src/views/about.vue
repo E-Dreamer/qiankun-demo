@@ -17,6 +17,7 @@
     },
     mounted() {
       console.log(this.$store,'----')
+      console.log(this.$route.query)
     },
   }
 </script>
