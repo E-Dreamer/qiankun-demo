@@ -5,10 +5,10 @@ rm -rf ./dist
 mkdir ./dist
 
 # 子应用
-cp -r ./child-ui/dist/ ./dist/child-ui/
+cp -r ./child-ui/dist/* ./dist/child-ui/
 
 # main基座
-cp -r ./main-ui/dist/ ./dist/main-ui/
+cp -r ./main-ui/dist/ ./
 
 # cd ./dist
 # zip -r mp$(date +%Y%m%d%H%M%S).zip *

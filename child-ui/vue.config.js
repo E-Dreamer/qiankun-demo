@@ -1,6 +1,8 @@
-const { name } = require('./package.json')
+let reg = /\/(.?*)\//;
+const name = process.env.BASE_URL.match(reg)[1];
+const isProd = process.env.NODE_ENV === "production";
 module.exports ={
-  publicPath: `/${name}`,
+  publicPath: process.env.BASE_URL,
   lintOnSave: false,
   transpileDependencies: [],
   devServer: {
@@ -16,5 +18,17 @@ module.exports ={
       chunkLoadingGlobal: `webpackJsonp_${name}`,
       // jsonpFunction: `webpackJsonp_${name}`, // webpack 5 需要把 jsonpFunction 替换成 chunkLoadingGlobal
     },
+    /* plugins:[
+      isProd?new FileManagerPlugin({
+        runOnceInWatchMode: false,
+        runTasksInSeries: false,
+        events: {
+          onEnd: {
+            delete: [`./${name}.zip`],
+            archive: [{ source: `./dist`, destination: `./${name}.zip` }],
+          },
+        },
+      }) : {apply(){}}
+    ] */
   },
 }

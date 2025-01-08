@@ -5,14 +5,12 @@ import VueRouter from 'vue-router'
 Vue.config.productionTip = false
 import { routes } from '@/router'
 
-const {name } = require('/package.json')
-console.log(name,'name0------')
 // import {store} from '@/store'
 let instance = null
 function render(props = {}) {
+  const base = process.env.BASE.URL;
   const { container, actions } = props
   console.log(props, 'props')
-  // let base = `${process.env.BASE_URL}`
   // let routes = []
   if (window.__POWERED_BY_QIANKUN__) {
     Vue.prototype.$parentRouter = actions.router
@@ -27,7 +25,7 @@ function render(props = {}) {
   Vue.use(VueRouter)
   let router = new VueRouter({
     // base: window.__POWERED_BY_QIANKUN__ ? '/child/' : '/',
-    base:name,
+    base,
     mode: 'history',
     routes,
   })

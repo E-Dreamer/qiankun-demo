@@ -1,9 +1,7 @@
 import { loadMicroApp } from 'qiankun'
 // import utils from '@/utils/util'
 const baseUrl = 'localhost'
-function genActiveRule(routerPrefix) {
-  return (location) => location.pathname.startsWith(routerPrefix)
-}
+
 const microApps = [
   {
     name: 'child',
